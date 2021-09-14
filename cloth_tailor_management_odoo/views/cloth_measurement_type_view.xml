@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <odoo>
+        <record id="cloth_measurement_type_form_view" model="ir.ui.view">
+            <field name="name">cloth.measurement.type.form</field>
+            <field name="model">cloth.measurement.type</field>
+            <field name="arch" type="xml">
+                <form string="Cloth Measurement Type" class="o_sale_order">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="sequence_no"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="cloth_measurement_type_tree_view" model="ir.ui.view">
+            <field name="name">cloth.measurement.type.tree</field>
+            <field name="model">cloth.measurement.type</field>
+            <field name="arch" type="xml">
+                <tree string="Cloth Measurement Type">
+                    <field name="sequence_no"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_cloth_measurement_type" model="ir.actions.act_window">
+            <field name="name">Cloth Measurement Type</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">cloth.measurement.type</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                </p>
+            </field>
+        </record>
+
+</odoo>

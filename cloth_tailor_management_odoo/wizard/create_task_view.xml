@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="view_cloth_request_task_wizard_form" model="ir.ui.view">
+            <field name="name">cloth.request.task.wizard.form</field>
+            <field name="model">cloth.request.task.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Create Cloth Request Task">
+                    <group>
+                        <group>
+                            <field name="user_id"/>
+                        </group>
+                        <group>
+                            <field name="project_id"/>
+                        </group>
+                    </group>
+                    <field  name="description"/>
+                    <footer>
+                        <button name="create_cloth_request_task" class="oe_highlight" string="Create Task" type="object"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_view_cloth_request_task_wizard" model="ir.actions.act_window">
+            <field name="name">Create cloth request task</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">cloth.request.task.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="binding_model_id" ref="cloth_tailor_management_odoo.model_cloth_request_details" />
+            <field name="binding_view_types">list</field>
+        </record>
+
+</odoo>

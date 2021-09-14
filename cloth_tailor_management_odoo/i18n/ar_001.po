@@ -1,0 +1,1393 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* cloth_tailor_management_odoo
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-19 02:20+0000\n"
+"PO-Revision-Date: 2020-10-19 15:00+0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: ar\n"
+"X-Generator: Poedit 2.4.1\n"
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.actions.report,print_report_name:cloth_tailor_management_odoo.action_report_cloth_request_measurement
+msgid "'%s Measurement' % (object.display_name)"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.actions.report,print_report_name:cloth_tailor_management_odoo.action_report_forma_cloth_measurement
+msgid "'%s Measurement' % (object.partner_id.name)"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_request_details_kanban_view
+msgid ""
+"<i class=\"fa fa-clock-o\" aria-label=\"Request Date\" role=\"img\" title="
+"\"Request Date\"/>"
+msgstr ""
+"<i class=\"fa fa-clock-o\" aria-label=\"Request Date\" role=\"img\" title="
+"\"تاريخ الطلب\"/>"
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.portal_custom_tailor_request_details
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.portal_custom_tailor_request_details_measurement
+msgid "<small class=\"text-right\">Status:</small>"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_request_details_form_view
+msgid "<span class=\"o_stat_text\">Amount Due</span>"
+msgstr "<span class=\"o_stat_text\">مبالغ مستحقة</span>"
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_request_details_form_view
+msgid "<span class=\"o_stat_text\">Consumptions</span>"
+msgstr "<span class=\"o_stat_text\">استهلاك</span>"
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_request_details_form_view
+msgid "<span class=\"o_stat_text\">Measurement</span>"
+msgstr "<span class=\"o_stat_text\">المقاسات</span>"
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_request_details_form_view
+msgid "<span class=\"o_stat_text\">Purchases</span>"
+msgstr "<span class=\"o_stat_text\">المشتريات</span>"
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_request_details_form_view
+msgid "<span class=\"o_stat_text\">Tasks</span>"
+msgstr "<span class=\"o_stat_text\">المهام</span>"
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.portal_custom_tailor_measurement_details
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.report_cloth_measurement_document
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.report_cloth_req_measurement_document
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.report_cloth_request_document
+msgid "<strong>Cloth Type:</strong>"
+msgstr "<strong>نوع التفصيل:</strong>"
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.portal_custom_tailor_measurement_details
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.portal_custom_tailor_request_details
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.report_cloth_measurement_document
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.report_cloth_req_measurement_document
+msgid "<strong>Company:</strong>"
+msgstr "<strong>شركة:</strong>"
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.portal_custom_tailor_measurement_details
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.portal_custom_tailor_request_details
+msgid "<strong>Customer:</strong>"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.portal_custom_tailor_measurement_details
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.report_cloth_measurement_document
+msgid "<strong>Date:</strong>"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.portal_custom_tailor_request_details
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.report_cloth_request_document
+msgid "<strong>Deadline Date:</strong>"
+msgstr "<strong>تاريخ التسليم:</strong>"
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.report_cloth_request_document
+msgid "<strong>Fabric Color:</strong>"
+msgstr "<strong>لون القماش:</strong>"
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.report_cloth_request_document
+msgid "<strong>Fabric:</strong>"
+msgstr "<strong>قماش:</strong>"
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.report_cloth_request_document
+msgid "<strong>Gender:</strong>"
+msgstr "<strong>جنس:</strong>"
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.portal_custom_tailor_measurement_details
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.portal_custom_tailor_request_details
+msgid "<strong>Message and communication history</strong>"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.portal_custom_tailor_request_details
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.report_cloth_request_document
+msgid "<strong>Request Date:</strong>"
+msgstr "<strong>تاريخ الطلب:</strong>"
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.portal_custom_tailor_measurement_details
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.portal_custom_tailor_request_details
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.report_cloth_measurement_document
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.report_cloth_req_measurement_document
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.report_cloth_request_document
+msgid "<strong>Responsible:</strong>"
+msgstr "<strong>تحت اشراف:</strong>"
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__access_warning
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__access_warning
+msgid "Access warning"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.view_consumption_request_form
+msgid "Accounting Entries"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__message_needaction
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_stage__active
+msgid "Active"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__activity_ids
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__activity_exception_decoration
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__activity_state
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__internal_note
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__internal_note
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_request_details_form_view
+msgid "Add an internal note..."
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__special_note
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_request_details_form_view
+msgid "Add an special note..."
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__consumption_request_count
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__invoices_due_amount
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__measurement_count
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__purchase_orders_count
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__sale_orders_count
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__tasks_count
+msgid "Amount Due"
+msgstr "مبالغ مستحقة"
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_task_wizard__user_id
+msgid "Assigned to"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__message_attachment_count
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__campaign_id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__campaign_id
+msgid "Campaign"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.view_cloth_request_task_wizard_form
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.view_cloth_request_wizard_form
+msgid "Cancel"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.view_consumption_request_form
+msgid "Cancel Inventory"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_measurement_details_form_view
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_type_form_view
+msgid "Cloat Measurment"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.actions.report,name:cloth_tailor_management_odoo.action_report_forma_cloth_measurement
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details_line__cloth_measurement_id
+msgid "Cloth Measurement"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.actions.act_window,name:cloth_tailor_management_odoo.action_cloth_measurement_details
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_measurement_details_form_view
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_measurement_details_tree_view
+msgid "Cloth Measurement Details"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.actions.act_window,name:cloth_tailor_management_odoo.action_cloth_measurement_type
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_measurement_type_form_view
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_measurement_type_tree_view
+msgid "Cloth Measurement Type"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.actions.act_window,name:cloth_tailor_management_odoo.action_cloth_request_details
+#: model:ir.actions.report,name:cloth_tailor_management_odoo.action_report_forma_cloth_request
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details_line__cloth_request_measurement_type_id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_measurement_cloth_type__cloth_request_id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_task_wizard__request_id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_project_task__cloth_request_id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_stock_inventory__tailor_request_id
+msgid "Cloth Request"
+msgstr "طلب تفصيل"
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_request_details_form_view
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_request_details_tree_view
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.view_cloth_request_details_calendar
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.view_cloth_request_details_graph
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.view_cloth_request_details_pivot
+msgid "Cloth Request Details"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.actions.act_window,name:cloth_tailor_management_odoo.action_cloth_request_measurement
+#: model:ir.actions.report,name:cloth_tailor_management_odoo.action_report_cloth_request_measurement
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_request_measurement_form_view
+msgid "Cloth Request Measurement"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__name
+msgid "Cloth Request Reference"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_request_stage_form
+msgid "Cloth Request Stage"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_request_stage_search
+msgid "Cloth Request Stage Search"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.actions.act_window,name:cloth_tailor_management_odoo.cloth_request_stage_action
+#: model:ir.model,name:cloth_tailor_management_odoo.model_cloth_request_stage
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_request_stage_tree
+msgid "Cloth Request Stages"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_account_move__custom_cloth_request_ids
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_purchase_order__tailor_request_id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_sale_order__custom_cloth_request_ids
+#: model:ir.ui.menu,name:cloth_tailor_management_odoo.cloth_request_details_main_menu
+msgid "Cloth Requests"
+msgstr "انشاء الطلب"
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_style_form_view
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_style_tree_view
+msgid "Cloth Style"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.actions.act_window,name:cloth_tailor_management_odoo.action_cloth_style
+#: model:ir.ui.menu,name:cloth_tailor_management_odoo.cloth_style_menu
+msgid "Cloth Styles"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__cloth_type_id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_type__cloth_type_id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_measurement_cloth_type__cloth_type_id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_wizard__cloth_type_id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_style__cloth_type_id
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_type_form_view
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_type_tree_view
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.display_tailor_measurments
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.portal_custom_tailor_request_details
+msgid "Cloth Type"
+msgstr "أنواع التفصيل"
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.actions.act_window,name:cloth_tailor_management_odoo.action_cloth_type
+#: model:ir.ui.menu,name:cloth_tailor_management_odoo.cloth_type_menu
+msgid "Cloth Types"
+msgstr "أنواع التفصيل"
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_project_task__cloth_type_id
+msgid "Cloth type"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__company_id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__company_id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_measurement_cloth_type__company_id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_task_wizard__company_id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_wizard__company_id
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.display_tailor_measurments
+msgid "Company"
+msgstr "شركة"
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.ui.menu,name:cloth_tailor_management_odoo.tailor_management_configuration_menu
+msgid "Configuration"
+msgstr "الاعدادات"
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_product_product__consumption_location_id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_product_template__consumption_location_id
+msgid "Consumption Location"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.actions.act_window,name:cloth_tailor_management_odoo.action_consumption_request_form
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.view_consumption_request_form
+msgid "Consumption Request"
+msgstr "استهلاك"
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.portal_custom_tailor_measurement_details
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.portal_custom_tailor_request_details
+msgid "Contact"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.view_consumption_request_form
+msgid "Continue Inventory"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.stock_consumption_line_tree
+msgid "Counted"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.view_cloth_request_wizard_form
+msgid "Create Cloth Request"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.view_cloth_request_task_wizard_form
+msgid "Create Cloth Request Task"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_request_details_form_view
+msgid "Create Consumption Request"
+msgstr "قماش للاستهلاك"
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_request_details_form_view
+msgid "Create Invoice"
+msgstr "انشاء فاتوره"
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_measurement_details_form_view
+msgid "Create Measurment Lines"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_request_details_form_view
+msgid "Create Purchase Request"
+msgstr "انشاء طلب شراء"
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.view_cloth_request_wizard_form
+msgid "Create Request"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.custom_crm_lead_view_form_cloth_request
+msgid "Create Tailor Request"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_request_details_form_view
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.view_cloth_request_task_wizard_form
+msgid "Create Task"
+msgstr "اسناد مهام"
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_stage__create_task
+msgid "Create Task?"
+msgstr "اسناد مهام?"
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.actions.act_window,help:cloth_tailor_management_odoo.action_consumption_request_form
+msgid "Create a new consumption request"
+msgstr "قماش للاستهلاك"
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.actions.act_window,help:cloth_tailor_management_odoo.custom_res_partner_action_customer
+msgid "Create a new customer in your address book"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.actions.act_window,name:cloth_tailor_management_odoo.action_view_cloth_request_wizard
+msgid "Create cloth request"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.actions.act_window,name:cloth_tailor_management_odoo.action_view_cloth_request_task_wizard
+msgid "Create cloth request task"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__create_uid
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details_line__create_uid
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_type__create_uid
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__create_uid
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_measurement_cloth_type__create_uid
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_stage__create_uid
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_task_wizard__create_uid
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_wizard__create_uid
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_style__create_uid
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_type__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__create_date
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details_line__create_date
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_type__create_date
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__create_date
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_measurement_cloth_type__create_date
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_stage__create_date
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_task_wizard__create_date
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_wizard__create_date
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_style__create_date
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_type__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.portal_custom_tailor_request_details
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.portal_custom_tailor_request_details_measurement
+msgid "Current stage of this request"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__partner_id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__partner_id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_measurement_cloth_type__partner_id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_task_wizard__partner_id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_wizard__partner_id
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.display_tailor_measurments
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.display_tailor_request
+msgid "Customer"
+msgstr "العملاء"
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.ui.menu,name:cloth_tailor_management_odoo.cloth_measurement_details_sub_menu
+#: model:ir.ui.menu,name:cloth_tailor_management_odoo.customer_measurment_top_menu
+msgid "Customer Measurements"
+msgstr "مقاسات العميل"
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,help:cloth_tailor_management_odoo.field_cloth_measurement_details__access_url
+#: model:ir.model.fields,help:cloth_tailor_management_odoo.field_cloth_request_details__access_url
+msgid "Customer Portal URL"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.actions.act_window,name:cloth_tailor_management_odoo.custom_res_partner_action_customer
+#: model:ir.ui.menu,name:cloth_tailor_management_odoo.custom_tailor_res_partner_menu
+msgid "Customers"
+msgstr "العملاء"
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__measurement_date
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.display_tailor_measurments
+msgid "Date"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_task_wizard__deadline_date
+msgid "Deadline"
+msgstr "تاريخ التسليم"
+
+#. module: cloth_tailor_management_odoo
+#: code:addons/cloth_tailor_management_odoo/controllers/main.py:0
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__deadline_date
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.display_tailor_request
+#, python-format
+msgid "Deadline Date"
+msgstr "تاريخ التسليم"
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_request_details_kanban_view
+msgid ""
+"Deadline: <i class=\"fa fa-clock-o\" aria-label=\"Request Date\" role=\"img"
+"\" title=\"Deadline\"/>"
+msgstr ""
+"تاريخ التسليم: <i class=\"fa fa-clock-o\" aria-label=\"Request Date\" role="
+"\"img\" title=\"Deadline\"/>"
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_request_details_kanban_view
+msgid "Delete"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_task_wizard__description
+msgid "Description"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__display_name
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details_line__display_name
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_type__display_name
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__display_name
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_measurement_cloth_type__display_name
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_stage__display_name
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_task_wizard__display_name
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_wizard__display_name
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_style__display_name
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_type__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_request_details_kanban_view
+msgid "Dropdown menu"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_request_details_kanban_view
+msgid "Edit"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_measurement_cloth_type__fabric_remarks
+msgid "Fabric"
+msgstr "قماش"
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_measurement_cloth_type__fabric_color
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.portal_custom_tailor_request_details
+msgid "Fabric Color"
+msgstr "لون القماش"
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.portal_custom_tailor_request_details
+msgid "Fabric remark"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields.selection,name:cloth_tailor_management_odoo.selection__cloth_request_measurement_cloth_type__gender__female
+#: model:ir.model.fields.selection,name:cloth_tailor_management_odoo.selection__cloth_request_wizard__gender__female
+#: model:ir.model.fields.selection,name:cloth_tailor_management_odoo.selection__cloth_type__gender__female
+msgid "Female"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_stage__fold
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_request_stage_form
+msgid "Folded"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__message_follower_ids
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__message_channel_ids
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__message_channel_ids
+msgid "Followers (Channels)"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__message_partner_ids
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_measurement_cloth_type__gender
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_wizard__gender
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_type__gender
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.portal_custom_tailor_request_details
+msgid "Gender"
+msgstr "جنس"
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_request_measurement_form_view
+msgid "Get Measurments"
+msgstr "احصل على المقاسات"
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details_line__id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_type__id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_measurement_cloth_type__id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_stage__id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_task_wizard__id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_wizard__id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_style__id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_type__id
+msgid "ID"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__activity_exception_icon
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details_line__measurement_icon
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_type__measurement_icon
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__activity_exception_icon
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_measurement_cloth_type__measurement_icon
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_style__style_icon
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.report_cloth_measurement_document
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.report_cloth_req_measurement_document
+msgid "Icon"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,help:cloth_tailor_management_odoo.field_cloth_measurement_details__activity_exception_icon
+#: model:ir.model.fields,help:cloth_tailor_management_odoo.field_cloth_request_details__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,help:cloth_tailor_management_odoo.field_cloth_measurement_details__message_needaction
+#: model:ir.model.fields,help:cloth_tailor_management_odoo.field_cloth_measurement_details__message_unread
+#: model:ir.model.fields,help:cloth_tailor_management_odoo.field_cloth_request_details__message_needaction
+#: model:ir.model.fields,help:cloth_tailor_management_odoo.field_cloth_request_details__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,help:cloth_tailor_management_odoo.field_cloth_measurement_details__message_has_error
+#: model:ir.model.fields,help:cloth_tailor_management_odoo.field_cloth_measurement_details__message_has_sms_error
+#: model:ir.model.fields,help:cloth_tailor_management_odoo.field_cloth_request_details__message_has_error
+#: model:ir.model.fields,help:cloth_tailor_management_odoo.field_cloth_request_details__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.view_consumption_request_form
+msgid ""
+"If you cancel this inventory adjustment, all its inventory adjustment lines "
+"will be lost. Are you sure you want to discard it ?"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_request_details_form_view
+msgid "Internal Note"
+msgstr "ملاحظات داخليه"
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model,name:cloth_tailor_management_odoo.model_stock_inventory
+msgid "Inventory"
+msgstr "الجرد"
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.stock_consumption_line_tree
+msgid "Inventory Details"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model,name:cloth_tailor_management_odoo.model_stock_inventory_line
+msgid "Inventory Line"
+msgstr "بند المخزون"
+
+#. module: cloth_tailor_management_odoo
+#: code:addons/cloth_tailor_management_odoo/models/stock_inventory.py:0
+#, python-format
+msgid "Inventory Lines"
+msgstr "بنود الجرد"
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__message_is_follower
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model,name:cloth_tailor_management_odoo.model_account_move
+msgid "Journal Entries"
+msgstr "القيود اليومية"
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details____last_update
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details_line____last_update
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_type____last_update
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details____last_update
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_measurement_cloth_type____last_update
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_stage____last_update
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_task_wizard____last_update
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_wizard____last_update
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_style____last_update
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_type____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__write_uid
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details_line__write_uid
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_type__write_uid
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__write_uid
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_measurement_cloth_type__write_uid
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_stage__write_uid
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_task_wizard__write_uid
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_wizard__write_uid
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_style__write_uid
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_type__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__write_date
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details_line__write_date
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_type__write_date
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__write_date
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_measurement_cloth_type__write_date
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_stage__write_date
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_task_wizard__write_date
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_wizard__write_date
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_style__write_date
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_type__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__lead_id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_wizard__lead_id
+msgid "Lead"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__message_main_attachment_id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields.selection,name:cloth_tailor_management_odoo.selection__cloth_request_measurement_cloth_type__gender__male
+#: model:ir.model.fields.selection,name:cloth_tailor_management_odoo.selection__cloth_request_wizard__gender__male
+#: model:ir.model.fields.selection,name:cloth_tailor_management_odoo.selection__cloth_type__gender__male
+msgid "Male"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details_line__measurement
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__measurement_ids
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.portal_custom_tailor_request_details_measurement
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.report_cloth_measurement_document
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.report_cloth_req_measurement_document
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.report_cloth_request_document
+msgid "Measurement"
+msgstr "المقاسات"
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.portal_custom_tailor_measurement_details
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.portal_custom_tailor_request_details
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.portal_custom_tailor_request_details_measurement
+msgid "Measurement Details"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details_line__measurement_details_line_id
+msgid "Measurement Line"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details_line__cloth_measurement_type_id
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.portal_custom_tailor_request_details_measurement
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.report_cloth_measurement_document
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.report_cloth_req_measurement_document
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.report_cloth_request_document
+msgid "Measurement Type"
+msgstr "نوع المقاس"
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__measurement_ids
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_type__measurement_ids
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_measurement_cloth_type__measurement_ids
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_type__measurement_ids
+msgid "Measurement Types"
+msgstr "نوع المقاس"
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.custom_tailor_request_menu_portal
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.display_tailor_measurments
+msgid "Measurements"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.portal_custom_tailor_measurement_details
+msgid "Measurment"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.portal_custom_tailor_measurement_details
+msgid "Measurment Type"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_measurement_details_form_view
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_request_measurement_form_view
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_type_form_view
+msgid "Measurments"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__medium_id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__medium_id
+msgid "Medium"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.display_tailor_request
+msgid "Membership Status"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__message_has_error
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__message_ids
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_type__name
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_task_wizard__name
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_type__name
+msgid "Name"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: code:addons/cloth_tailor_management_odoo/models/cloth_request_details.py:0
+#, python-format
+msgid "New"
+msgstr "جديد"
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__activity_date_deadline
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__activity_summary
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__activity_type_id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__message_needaction_counter
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__message_has_error_counter
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,help:cloth_tailor_management_odoo.field_cloth_measurement_details__message_needaction_counter
+#: model:ir.model.fields,help:cloth_tailor_management_odoo.field_cloth_request_details__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,help:cloth_tailor_management_odoo.field_cloth_measurement_details__message_has_error_counter
+#: model:ir.model.fields,help:cloth_tailor_management_odoo.field_cloth_request_details__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,help:cloth_tailor_management_odoo.field_cloth_measurement_details__message_unread_counter
+#: model:ir.model.fields,help:cloth_tailor_management_odoo.field_cloth_request_details__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.actions.act_window,help:cloth_tailor_management_odoo.custom_res_partner_action_customer
+msgid "Odoo helps you easily track all activities related to a customer."
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.stock_consumption_line_tree
+msgid "On Hand"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.stock_consumption_line_tree
+msgid "Package"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__access_url
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__access_url
+msgid "Portal Access URL"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.view_consumption_request_form
+msgid "Product Moves"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model,name:cloth_tailor_management_odoo.model_product_template
+msgid "Product Template"
+msgstr "قالب المنتج"
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_stage__project_id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_task_wizard__project_id
+msgid "Project"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model,name:cloth_tailor_management_odoo.model_purchase_order
+msgid "Purchase Order"
+msgstr "أمر شراء"
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_stock_inventory_line__qty_to_consume
+msgid "Qty to Consume"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_measurement_cloth_type__quantity
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_wizard__quantity
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.portal_custom_tailor_request_details
+msgid "Quantity"
+msgstr "الكمية"
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.actions.act_window,name:cloth_tailor_management_odoo.custom_sale_action_quotations_new
+msgid "Quotation"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__measurement_ref
+msgid "Reference"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.stock_consumption_line_tree
+msgid "Refresh quantity"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: code:addons/cloth_tailor_management_odoo/controllers/main.py:0
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__request_date
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.display_tailor_request
+#, python-format
+msgid "Request Date"
+msgstr "تاريخ الطلب"
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.display_tailor_request
+msgid "Request No."
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__user_id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__user_id
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.display_tailor_measurments
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.display_tailor_request
+msgid "Responsible"
+msgstr "تحت اشراف"
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__activity_user_id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__message_has_sms_error
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model,name:cloth_tailor_management_odoo.model_sale_advance_payment_inv
+msgid "Sales Advance Payment Invoice"
+msgstr "فاتورة الدفعة المقدمة للمبيعات"
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model,name:cloth_tailor_management_odoo.model_sale_order
+msgid "Sales Order"
+msgstr "أمر البيع"
+
+#. module: cloth_tailor_management_odoo
+#: code:addons/cloth_tailor_management_odoo/controllers/main.py:0
+#, python-format
+msgid "Search <span class=\"nolabel\"> (in ClothType)</span>"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: code:addons/cloth_tailor_management_odoo/controllers/main.py:0
+#, python-format
+msgid "Search in All"
+msgstr "البحث في الكل"
+
+#. module: cloth_tailor_management_odoo
+#: code:addons/cloth_tailor_management_odoo/controllers/main.py:0
+#, python-format
+msgid "Search in Gender"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: code:addons/cloth_tailor_management_odoo/controllers/main.py:0
+#, python-format
+msgid "Search in Status"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__access_token
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__access_token
+msgid "Security Token"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_stage__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_type__sequence_no
+msgid "Sequence No."
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.view_consumption_request_form
+msgid "Set to Draft"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__source_id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__source_id
+msgid "Source"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_request_details_form_view
+msgid "Special Note"
+msgstr "ملاحظات خاصه"
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__stage_id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_project_task__cloth_req_stage_id
+msgid "Stage"
+msgstr "مراحل الخياطة"
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_stage__name
+msgid "Stage Name"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.ui.menu,name:cloth_tailor_management_odoo.menu_cloth_request_stage_act
+msgid "Stages"
+msgstr "مراحل الخياطة"
+
+#. module: cloth_tailor_management_odoo
+#: code:addons/cloth_tailor_management_odoo/controllers/main.py:0
+#, python-format
+msgid "Status"
+msgstr "الحالة"
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,help:cloth_tailor_management_odoo.field_cloth_measurement_details__activity_state
+#: model:ir.model.fields,help:cloth_tailor_management_odoo.field_cloth_request_details__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model,name:cloth_tailor_management_odoo.model_stock_move
+msgid "Stock Move"
+msgstr "حركة المخزون"
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_style__name
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.report_cloth_measurement_document
+msgid "Style name"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__style_ids
+msgid "Styles"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.ui.menu,name:cloth_tailor_management_odoo.tailor_management_menu_root
+msgid "Tailor"
+msgstr "الخياطة"
+
+#. module: cloth_tailor_management_odoo
+#: model:res.groups,name:cloth_tailor_management_odoo.custom_group_tailor_manager
+msgid "Tailor Manager"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.display_tailor_request
+msgid "Tailor Request"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.custom_tailor_request_menu_portal
+msgid "Tailor Requests"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:res.groups,name:cloth_tailor_management_odoo.custom_group_tailor_user
+msgid "Tailor User"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model,name:cloth_tailor_management_odoo.model_project_task
+msgid "Task"
+msgstr "المهمة"
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.display_tailor_measurments
+msgid "There are currently no measurements for your account."
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.display_tailor_request
+msgid "There are currently no tailor requests for your account."
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,help:cloth_tailor_management_odoo.field_cloth_measurement_details__campaign_id
+#: model:ir.model.fields,help:cloth_tailor_management_odoo.field_cloth_request_details__campaign_id
+msgid ""
+"This is a name that helps you keep track of your different campaign "
+"efforts, e.g. Fall_Drive, Christmas_Special"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,help:cloth_tailor_management_odoo.field_cloth_measurement_details__medium_id
+#: model:ir.model.fields,help:cloth_tailor_management_odoo.field_cloth_request_details__medium_id
+msgid "This is the method of delivery, e.g. Postcard, Email, or Banner Ad"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,help:cloth_tailor_management_odoo.field_cloth_measurement_details__source_id
+#: model:ir.model.fields,help:cloth_tailor_management_odoo.field_cloth_request_details__source_id
+msgid ""
+"This is the source of the link, e.g. Search Engine, another domain, or name "
+"of email list"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,help:cloth_tailor_management_odoo.field_cloth_request_stage__fold
+msgid ""
+"This stage is folded in the kanban view when there are no records in that "
+"stage to display."
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,help:cloth_tailor_management_odoo.field_product_product__consumption_location_id
+#: model:ir.model.fields,help:cloth_tailor_management_odoo.field_product_template__consumption_location_id
+msgid ""
+"This stock location will be used, instead of the default one, as the source "
+"location for stock moves generated when you do an inventory consumption."
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_style__style_type_id
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.report_cloth_measurement_document
+msgid "Type"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,help:cloth_tailor_management_odoo.field_cloth_measurement_details__activity_exception_decoration
+#: model:ir.model.fields,help:cloth_tailor_management_odoo.field_cloth_request_details__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.portal_custom_tailor_measurement_details
+msgid "Unit of  Measure"
+msgstr "وحدة القياس"
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details_line__uom_id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_type__uom_id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_measurement_cloth_type__uom_id
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_wizard__uom_id
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.portal_custom_tailor_request_details
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.portal_custom_tailor_request_details_measurement
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.report_cloth_measurement_document
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.report_cloth_req_measurement_document
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.report_cloth_request_document
+msgid "Unit of Measure"
+msgstr "وحدة القياس"
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__message_unread
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__message_unread_counter
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.stock_consumption_line_tree
+msgid "UoM"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_request_measurement_form_view
+msgid "Update"
+msgstr "تحديث"
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.cloth_request_measurement_form_view
+msgid "Update all measurement"
+msgstr "تحميل كل المقاسات"
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,help:cloth_tailor_management_odoo.field_cloth_request_stage__sequence
+msgid "Used to order stages. Lower is better."
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.view_consumption_request_form
+msgid "Validate"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.view_consumption_request_form
+msgid "Validate Inventory"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.portal_custom_tailor_request_details
+msgid "View Measurements"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_measurement_details__website_message_ids
+#: model:ir.model.fields,field_description:cloth_tailor_management_odoo.field_cloth_request_details__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model.fields,help:cloth_tailor_management_odoo.field_cloth_measurement_details__website_message_ids
+#: model:ir.model.fields,help:cloth_tailor_management_odoo.field_cloth_request_details__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.custom_portal_tailor_request_menu
+msgid "Your Measurements"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.custom_portal_tailor_request_menu
+msgid "Your Tailor Requests"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model,name:cloth_tailor_management_odoo.model_cloth_measurement_details
+msgid "cloth.measurement.details"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model,name:cloth_tailor_management_odoo.model_cloth_measurement_details_line
+msgid "cloth.measurement.details.line"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model,name:cloth_tailor_management_odoo.model_cloth_measurement_type
+msgid "cloth.measurement.type"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model,name:cloth_tailor_management_odoo.model_cloth_request_details
+msgid "cloth.request.details"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model,name:cloth_tailor_management_odoo.model_cloth_request_measurement_cloth_type
+msgid "cloth.request.measurement.cloth.type"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model,name:cloth_tailor_management_odoo.model_cloth_request_task_wizard
+msgid "cloth.request.task.wizard"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model,name:cloth_tailor_management_odoo.model_cloth_request_wizard
+msgid "cloth.request.wizard"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model,name:cloth_tailor_management_odoo.model_cloth_style
+msgid "cloth.style"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.model,name:cloth_tailor_management_odoo.model_cloth_type
+msgid "cloth.type"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model_terms:ir.ui.view,arch_db:cloth_tailor_management_odoo.view_consumption_request_form
+msgid "e.g. Consumption Request"
+msgstr ""
+
+#. module: cloth_tailor_management_odoo
+#: model:ir.actions.report,print_report_name:cloth_tailor_management_odoo.action_report_forma_cloth_request
+msgid "object.name"
+msgstr ""

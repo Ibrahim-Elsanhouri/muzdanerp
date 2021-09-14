@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Cloth Request Report -->
+    <template id="report_cloth_request_document">
+        <t t-call="web.external_layout">
+            <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)" />
+            <t t-set="address">
+                <div t-field="doc.partner_id"
+                    t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}' />
+                <p t-if="doc.partner_id.vat"><t t-esc="doc.company_id.country_id.vat_label or 'Tax ID'"/>: <span t-field="doc.partner_id.vat"/></p>
+            </t>
+            <div class="page">
+                <div class="oe_structure"/>
+
+                <h2 class="mt16">
+                    <span t-field="doc.name"/>
+                </h2>
+                <div class="row mt32 mb32" id="informations">
+                    <div t-if="doc.gender" class="col-auto mw-100 mb-2">
+                        <strong>Gender:</strong>
+                        <p class="m-0" t-field="doc.gender"/>
+                    </div>
+                    <div t-if="doc.user_id" class="col-auto mw-100 mb-2">
+                        <strong>Responsible:</strong>
+                        <p class="m-0" t-field="doc.user_id"/>
+                    </div>
+                    <div t-if="doc.cloth_type_id" class="col-auto mw-100 mb-2">
+                        <strong>Cloth Type:</strong>
+                        <p class="m-0" t-field="doc.cloth_type_id"/>
+                    </div>
+                    <div t-if="doc.request_date" class="col-auto mw-100 mb-2">
+                        <strong>Request Date:</strong>
+                        <p class="m-0" t-field="doc.request_date" t-options='{"widget": "date"}'/>
+                    </div>
+                    <div t-if="doc.deadline_date" class="col-auto mw-100 mb-2">
+                        <strong>Deadline Date:</strong>
+                        <p class="m-0" t-field="doc.deadline_date" t-options='{"widget": "date"}'/>
+                    </div>
+                    <div t-if="doc.fabric_remarks" class="col-auto mw-100 mb-2">
+                        <strong>Fabric:</strong>
+                        <p class="m-0" t-field="doc.fabric_remarks"/>
+                    </div>
+                    <div t-if="doc.fabric_color" class="col-auto mw-100 mb-2">
+                        <strong>Fabric Color:</strong>
+                        <p class="m-0" t-field="doc.fabric_color"/>
+                    </div>
+                </div>
+
+                <table class="table table-sm o_main_table">
+                    <thead>
+                        <tr>
+                            <th name="th_description" class="text-left">Measurement Type</th>
+                            <th name="th_quantity" class="text-right">Measurement</th>
+                            <th name="th_quantity" class="text-right">Unit of Measure</th>
+                        </tr>
+                    </thead>
+                    <tbody class="sale_tbody">
+                            <tr>
+                                <td colspan="3" class="bg-light text-dark">
+                                    <strong>
+                                        <span t-field="doc.cloth_type_id"/>
+                                    </strong>
+                                </td>
+                            </tr>
+                            <t t-foreach="doc.measurement_ids" t-as="line">
+                                <tr>
+                                    <td>
+                                        &#160;&#160;&#160;&#160;&#160;&#160;<span t-esc="line.cloth_measurement_type_id.name"/>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-esc="line.measurement"/>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="line.uom_id"/>
+                                    </td>
+                                </tr>
+                            </t>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </template>
+
+    <template id="report_cloth_request_pro_forma">
+        <t t-call="web.html_container">
+            <t t-set="is_pro_forma" t-value="True"/>
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="cloth_tailor_management_odoo.report_cloth_request_document" t-lang="doc.partner_id.lang"/>
+            </t>
+        </t>
+    </template>
+
+    <!-- Cloth Measurement Report -->
+    <template id="report_cloth_measurement_document">
+        <t t-call="web.external_layout">
+            <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)" />
+            <t t-set="address">
+                <div t-field="doc.partner_id"
+                    t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}' />
+                <p t-if="doc.partner_id.vat"><t t-esc="doc.company_id.country_id.vat_label or 'Tax ID'"/>: <span t-field="doc.partner_id.vat"/></p>
+            </t>
+            <div class="page">
+                <div class="oe_structure"/>
+
+                <h4 class="mt16">
+                    <span t-field="doc.partner_id.name"/> Measurement
+                </h4>
+                <div class="row mt32 mb32" id="informations">
+                    <div t-if="doc.measurement_date" class="col-auto mw-100 mb-2">
+                        <strong>Date:</strong>
+                        <p class="m-0" t-field="doc.measurement_date"/>
+                    </div>
+                    <div t-if="doc.cloth_type_id" class="col-auto mw-100 mb-2">
+                        <strong>Cloth Type:</strong>
+                        <p class="m-0" t-field="doc.cloth_type_id"/>
+                    </div>
+                    <div t-if="doc.user_id" class="col-auto mw-100 mb-2">
+                        <strong>Responsible:</strong>
+                        <p class="m-0" t-field="doc.user_id"/>
+                    </div>
+                    <div t-if="doc.company_id" class="col-auto mw-100 mb-2">
+                        <strong>Company:</strong>
+                        <p class="m-0" t-field="doc.company_id"/>
+                    </div>
+                </div>
+
+                <table class="table table-sm o_main_table">
+                    <thead>
+                        <tr>
+                            <th class="text-left">Type</th>
+                            <th colspan="2" class="text-left">Style name</th>
+                            <th class="text-left">Note</th>
+                        </tr>
+                    </thead>
+                    <tbody class="sale_tbody">
+                        <t t-foreach="doc.style_ids" t-as="line">
+                            <tr>
+                                <td class="text-left">
+                                    <span t-esc="line.style_type_id.name"/>
+                                </td>
+                                <td>
+                                    <span t-esc="line.style_id.name"/>
+                                </td>
+                                <td class="text-right">
+                                    <img t-if="line.style_icon" t-att-src="image_data_uri(line.style_icon)" class="float-right" alt="Icon"/>
+                                </td>
+                                <td class="text-left">
+                                    <span t-esc="line.note"/>
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+
+                <table class="table table-sm o_main_table">
+                    <thead>
+                        <tr>
+                            <th name="th_description" colspan="2" class="text-left">Measurement Type</th>
+                            <th name="th_quantity" class="text-right">Measurement</th>
+                            <th name="th_quantity" class="text-right">Unit of Measure</th>
+                        </tr>
+                    </thead>
+                    <tbody class="sale_tbody">
+                            <tr>
+                                <td colspan="4" class="bg-light text-dark">
+                                    <strong>
+                                        <span t-field="doc.cloth_type_id"/>
+                                    </strong>
+                                </td>
+                            </tr>
+                            <t t-foreach="doc.measurement_ids" t-as="line">
+                                <tr>
+                                    <td>
+                                        &#160;&#160;&#160;&#160;&#160;&#160;<span t-esc="line.cloth_measurement_type_id.name"/>
+                                    </td>
+                                    <td class="text-right">
+                                        <img t-if="line.measurement_icon" t-att-src="image_data_uri(line.measurement_icon)" class="float-right" alt="Icon"/>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-esc="line.measurement"/>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="line.uom_id"/>
+                                    </td>
+                                </tr>
+                            </t>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </template>
+
+    <template id="report_cloth_measurement_pro_forma">
+        <t t-call="web.html_container">
+            <t t-set="is_pro_forma" t-value="True"/>
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="cloth_tailor_management_odoo.report_cloth_measurement_document" t-lang="doc.partner_id.lang"/>
+            </t>
+        </t>
+    </template>
+
+    <!-- Cloth Request Measurement Report -->
+    <template id="report_cloth_req_measurement_document">
+        <t t-call="web.external_layout">
+            <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)" />
+            <div class="page">
+                <div class="oe_structure"/>
+                <br/><br/>
+                <h4 class="mt16">
+                    <span t-field="doc.partner_id.name"/> Measurement
+                </h4>
+                <div class="row mt32 mb32" id="informations">
+                    <div t-if="doc.cloth_type_id" class="col-auto mw-100 mb-2">
+                        <strong>Cloth Type:</strong>
+                        <p class="m-0" t-field="doc.cloth_type_id"/>
+                    </div>
+                    <div t-if="doc.cloth_request_id.user_id" class="col-auto mw-100 mb-2">
+                        <strong>Responsible:</strong>
+                        <p class="m-0" t-field="doc.cloth_request_id.user_id"/>
+                    </div>
+                    <div t-if="doc.company_id" class="col-auto mw-100 mb-2">
+                        <strong>Company:</strong>
+                        <p class="m-0" t-field="doc.company_id"/>
+                    </div>
+                </div>
+
+                <table class="table table-sm o_main_table">
+                    <thead>
+                        <tr>
+                            <th name="th_description" colspan="2" class="text-left">Measurement Type</th>
+                            <th name="th_quantity" class="text-right">Measurement</th>
+                            <th name="th_quantity" class="text-right">Unit of Measure</th>
+                        </tr>
+                    </thead>
+                    <tbody class="sale_tbody">
+                        <t t-foreach="doc.measurement_ids" t-as="line">
+                            <tr>
+                                <td>
+                                    <span t-esc="line.cloth_measurement_type_id.name"/>
+                                </td>
+                                <td class="text-right">
+                                    <img t-if="line.measurement_icon" t-att-src="image_data_uri(line.measurement_icon)" class="float-right" alt="Icon"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-esc="line.measurement"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="line.uom_id"/>
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </template>
+
+    <template id="report_cloth_req_measurement_template">
+        <t t-call="web.html_container">
+            <t t-set="is_pro_forma" t-value="True"/>
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="cloth_tailor_management_odoo.report_cloth_req_measurement_document" t-lang="doc.partner_id.lang"/>
+            </t>
+        </t>
+    </template>
+
+</odoo>

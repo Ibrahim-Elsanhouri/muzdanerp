@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<!-- Top menu item -->
+    <menuitem id="tailor_management_menu_root"
+        name="Tailor"
+        web_icon="cloth_tailor_management_odoo,static/description/icon.png"
+        sequence="7"/>
+
+    <!-- Cloth Requests Menus -->
+    <menuitem id="cloth_request_details_main_menu"
+        name="Cloth Requests"
+        parent="tailor_management_menu_root"
+        action="cloth_tailor_management_odoo.action_cloth_request_details"
+        sequence="1"/>
+
+    <!-- Cloth  Request Sub Menus -->
+    <menuitem id="customer_measurment_top_menu"
+        name="Customer Measurements"
+        parent="tailor_management_menu_root"
+        sequence="2"/>
+
+    <menuitem id="cloth_measurement_details_sub_menu"
+        name="Customer Measurements"
+        parent="cloth_tailor_management_odoo.customer_measurment_top_menu"
+        action="cloth_tailor_management_odoo.action_cloth_measurement_details"
+        sequence="1"/>
+
+    <menuitem id="custom_tailor_res_partner_menu"
+    	name="Customers"
+        parent="cloth_tailor_management_odoo.customer_measurment_top_menu"
+        action="cloth_tailor_management_odoo.custom_res_partner_action_customer"
+        sequence="2"/>
+
+
+    <!-- Configuration menu -->
+    <menuitem id="tailor_management_configuration_menu"
+        name="Configuration"
+        parent="cloth_tailor_management_odoo.tailor_management_menu_root"
+        groups="cloth_tailor_management_odoo.custom_group_tailor_manager"
+        sequence="3"/>
+
+    <!-- Configuration Sub menu -->
+    <menuitem id="cloth_type_menu"
+        name="Cloth Types"
+        parent="cloth_tailor_management_odoo.tailor_management_configuration_menu"
+        action="cloth_tailor_management_odoo.action_cloth_type"
+        sequence="1"/>
+
+    <menuitem id="cloth_style_menu"
+        name="Cloth Styles"
+        parent="cloth_tailor_management_odoo.tailor_management_configuration_menu"
+        action="cloth_tailor_management_odoo.action_cloth_style"
+        sequence="1"/>
+
+    <menuitem id="menu_cloth_request_stage_act"
+        name="Stages"
+        parent="cloth_tailor_management_odoo.tailor_management_configuration_menu"
+        action="cloth_tailor_management_odoo.cloth_request_stage_action"
+        sequence="2"/>    
+</odoo>

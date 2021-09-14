@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Portal MyAccount Menu -->
+        <template id="custom_tailor_request_menu_portal" name="Portal layout : Add a 'Tailor Request' Menu" inherit_id="portal.portal_breadcrumbs">
+            <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+                 <li t-if="page_name == 'tailor_request_page' or tailor_request_id" t-attf-class="breadcrumb-item #{'active ' if not tailor_request_id else ''}">
+                    <a t-if="tailor_request_id" t-attf-href="/my/tailor/requests?{{ keep_query() }}">Tailor Requests</a>
+                    <t t-else="">Tailor Requests</t>
+                </li>
+                <li t-if="tailor_request_id" class="breadcrumb-item active">
+                    <span t-field="tailor_request_id.name"/>
+                </li>
+
+                <li t-if="page_name == 'tailor_measurement_page' or tailor_measurement_id" t-attf-class="breadcrumb-item #{'active ' if not tailor_measurement_id else ''}">
+                    <a t-if="tailor_measurement_id" t-attf-href="/my/tailor/measurements?{{ keep_query() }}">Measurements</a>
+                    <t t-else="">Measurements</t>
+                </li>
+                <li t-if="tailor_measurement_id" class="breadcrumb-item active">
+                    <span t-field="tailor_measurement_id.cloth_type_id.name"/>
+                </li>
+            </xpath>
+        </template>
+
+        <template id="custom_portal_tailor_request_menu" name="Custom Portal: Tailor Requests" inherit_id="portal.portal_my_home" priority="40">
+            <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+                <t t-if="tailor_request_count" t-call="portal.portal_docs_entry">
+                    <t t-set="title">Your Tailor Requests</t>
+                    <t t-set="url" t-value="'/my/tailor/requests'"/>
+                    <t t-set="count" t-value="tailor_request_count"/>
+                </t>
+                <t t-if="tailor_measurement_count" t-call="portal.portal_docs_entry">
+                    <t t-set="title">Your Measurements</t>
+                    <t t-set="url" t-value="'/my/tailor/measurements'"/>
+                    <t t-set="count" t-value="tailor_measurement_count"/>
+                </t>
+            </xpath>
+        </template>
+
+        <template id="display_tailor_request" name="Display Tailor Request">
+            <t t-call="portal.portal_layout">
+                <t t-set="breadcrumbs_searchbar" t-value="True"/>
+                <t t-call="portal.portal_searchbar">
+                    <t t-set="title">Tailor Request</t>
+                </t>
+                <t t-if="not tailor_requests">
+                    <p>There are currently no tailor requests for your account.</p>
+                </t>
+                <t t-if="tailor_requests" t-call="portal.portal_table">
+                    <thead>
+                      <tr class="active">
+                        <th>Request No.</th>
+                        <th>Customer</th>
+<!--                        <th>Cloth Type</th>-->
+<!--                        <th>Quantity</th>-->
+                        <th>Responsible</th>
+                        <th>Request Date</th>
+                        <th>Deadline Date</th>
+                        <th>Membership Status</th>
+                      </tr>
+                    </thead>
+                    <t t-foreach="tailor_requests" t-as="tailor_request">
+                        <tr>
+                            <td>
+                                <a t-attf-href="/my/tailor/request/#{tailor_request.id}?{{ keep_query() }}"><span t-field="tailor_request.name"/></a>
+                            </td>
+                            <td>
+                                <span t-field="tailor_request.partner_id.name"/>
+                            </td>
+<!--                            <td>-->
+<!--                                <span t-field="tailor_request.cloth_type_id.cloth_type_id.name"/>-->
+<!--                            </td>-->
+<!--                            <td class="text-right">-->
+<!--                                <span t-field="tailor_request.quantity"/>-->
+<!--                            </td>-->
+                            <td>
+                                <span t-field="tailor_request.user_id.name"/>
+                            </td>
+                             <td>
+                                <span t-field="tailor_request.request_date"/>
+                            </td>
+                            <td>
+                                <span t-field="tailor_request.deadline_date"/>
+                            </td>
+                            <td>
+                                <span t-field="tailor_request.stage_id.name"/>
+                            </td>
+                        </tr>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <template id="portal_custom_tailor_request_details" name="Tailor Request Details">
+        <t t-call="portal.portal_layout">
+            <t t-call="portal.portal_record_layout">
+                <t t-set="card_header">
+                    <div class="row no-gutters">
+                        <div class="col-md">
+                            <h5 class="mb-1 mb-md-0">
+                                <span t-field="tailor_request_id.name"/>
+                                <small class="text-muted"> (#<span t-field="tailor_request_id.id"/>)</small>
+                            </h5>
+                        </div>
+                        <div class="col-md text-md-right">
+                            <small class="text-right">Status:</small>
+                            <span t-field="tailor_request_id.stage_id.name" class=" badge badge-pill badge-info" title="Current stage of this request"/>
+                        </div>
+                    </div>
+                    <t t-set="card_body">
+                        <div class="row mb-4" t-if="tailor_request_id.partner_id">
+                            <div class="col-12 col-md-6 pb-2">
+                                <strong>Customer:</strong>
+                                <div class="row">
+                                    <div class="col flex-grow-0 pr-3">
+                                        <img t-if="tailor_request_id.partner_id.image_1024" class="rounded-circle mt-1 o_portal_contact_img" t-att-src="image_data_uri(tailor_request_id.partner_id.image_1024)" alt="Contact"/>
+                                        <img t-else="" class="rounded-circle mt-1 o_portal_contact_img" src="/web/static/src/img/user_menu_avatar.png" alt="Contact"/>
+                                    </div>
+                                    <div class="col pl-md-0">
+                                        <div t-field="tailor_request_id.partner_id" t-options='{"widget": "contact", "fields": ["name", "email", "phone"]}'/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 pb-2">
+                                <strong>Responsible:</strong>
+                                <div class="row">
+                                    <div class="col flex-grow-0 pr-3">
+                                        <img t-if="tailor_request_id.sudo().user_id.image_1024" class="rounded-circle mt-1 o_portal_contact_img" t-att-src="image_data_uri(tailor_request_id.sudo().user_id.image_1024)" alt="Contact"/>
+                                        <img t-else="" class="rounded-circle mt-1 o_portal_contact_img" src="/web/static/src/img/user_menu_avatar.png" alt="Contact"/>
+                                    </div>
+                                    <div class="col pl-md-0">
+                                        <div t-field="tailor_request_id.user_id" t-options='{"widget": "contact", "fields": ["name", "email", "phone"]}'/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-12 col-md-6" t-if="tailor_request_id.request_date">
+                                <strong>Request Date:</strong> <span t-field="tailor_request_id.request_date" t-options='{"widget": "date"}'/>
+                            </div>
+                            <div class="col-12 col-md-6" t-if="tailor_request_id.deadline_date">
+                                <strong>Deadline Date:</strong> <span t-field="tailor_request_id.deadline_date" t-options='{"widget": "date"}'/>
+                            </div>
+<!--                            <div class="col-12 col-md-6" t-if="tailor_request_id.gender">-->
+<!--                                <strong>Gender:</strong> <span t-field="tailor_request_id.gender"/>-->
+<!--                            </div>-->
+                            <div class="col-12 col-md-6" t-if="tailor_request_id.company_id">
+                                <strong>Company:</strong> <span t-field="tailor_request_id.company_id"/>
+                            </div>
+<!--                            <div class="col-12 col-md-6" t-if="tailor_request_id.quantity">-->
+<!--                                <strong>Quantity:</strong> <span t-field="tailor_request_id.quantity"/>-->
+<!--                            </div>-->
+<!--                            <div class="col-12 col-md-6" t-if="tailor_request_id.cloth_type_id">-->
+<!--                                <strong>Cloth Type:</strong> <span t-field="tailor_request_id.cloth_type_id"/>-->
+<!--                            </div>-->
+<!--                            <div class="col-12 col-md-6" t-if="tailor_request_id.fabric_remarks">-->
+<!--                                <strong>Fabric:</strong> <span t-field="tailor_request_id.fabric_remarks"/>-->
+<!--                            </div>-->
+<!--                            <div class="col-12 col-md-6" t-if="tailor_request_id.fabric_color">-->
+<!--                                <strong>Fabric Color:</strong> <span t-field="tailor_request_id.fabric_color"/>-->
+<!--                            </div>-->
+                        </div>
+                        <div class="row">
+                            <div class="col-12 panel panel-default">
+                                <div class="panel-heading"><center><h4>Measurement Details</h4></center></div>
+                                <div class="panel-body">
+                                    <t t-if="tailor_request_id.measurement_ids" t-call="portal.portal_table">
+                                        <thead>
+                                          <tr class="active">
+                                            <th>Gender</th>
+                                            <th>Unit of Measure</th>
+                                            <th>Cloth Type</th>
+                                            <th>Quantity</th>
+                                            <th>Fabric remark</th>
+                                            <th>Fabric Color</th>
+                                          </tr>
+                                        </thead>
+                                        <t t-foreach="tailor_request_id.measurement_ids" t-as="line">
+                                            <tr>
+                                                <td>
+                                                    <span t-field="line.gender"/>
+                                                </td>
+                                                <td>
+                                                    <span t-field="line.sudo().uom_id.name"/>
+                                                </td>
+                                                 <td>
+                                                    <span t-field="line.cloth_type_id"/>
+                                                </td>
+                                                <td>
+                                                    <span t-field="line.quantity"/>
+                                                </td>
+                                                <td>
+                                                    <span t-field="line.fabric_remarks"/>
+                                                </td>
+                                                <td>
+                                                    <span t-field="line.fabric_color"/>
+                                                </td>
+                                                <td>
+                                                    <a t-attf-href="/my/tailor/request/measurement/#{line.id}?{{ keep_query() }}"> View Measurements </a>
+                                                </td>
+                                            </tr>
+                                        </t>
+                                    </t>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+            <div class="mt32">
+                <h4><strong>Message and communication history</strong></h4>
+                <t t-call="portal.message_thread">
+                    <t t-set="object" t-value="tailor_request_id"/>
+                    <t t-set="token" t-value="tailor_request_id.access_token"/>
+                    <t t-set="pid" t-value="pid"/>
+                    <t t-set="hash" t-value="hash"/>
+                </t>
+            </div>
+        </t>
+    </template>
+
+    <template id="portal_custom_tailor_request_details_measurement" name="Measurements Details">
+        <t t-call="portal.portal_layout">
+            <t t-call="portal.portal_record_layout">
+                <t t-set="card_header">
+                    <div class="row no-gutters">
+                        <div class="col-md">
+                            <a t-attf-href="/my/tailor/request/#{measurement_type_id.cloth_request_id.id}?{{ keep_query() }}">
+                                <h5 class="mb-1 mb-md-0">
+                                    <span t-field="measurement_type_id.cloth_request_id.name"/>
+                                    <small class="text-muted"> (#<span t-field="measurement_type_id.cloth_request_id.id"/>)</small>
+                                </h5>
+                            </a>
+                        </div>
+                        <div class="col-md text-md-right">
+                            <small class="text-right">Status:</small>
+                            <span t-field="measurement_type_id.cloth_request_id.stage_id.name" class=" badge badge-pill badge-info" title="Current stage of this request"/>
+                        </div>
+                    </div>
+                    <t t-set="card_body">
+<!--                        <div class="row mb-4" t-if="tailor_request_id.partner_id">-->
+<!--                            <div class="col-12 col-md-6 pb-2">-->
+<!--                                <strong>Customer:</strong>-->
+<!--                                <div class="row">-->
+<!--                                    <div class="col flex-grow-0 pr-3">-->
+<!--                                        <img t-if="tailor_request_id.partner_id.image_1024" class="rounded-circle mt-1 o_portal_contact_img" t-att-src="image_data_uri(tailor_request_id.partner_id.image_1024)" alt="Contact"/>-->
+<!--                                        <img t-else="" class="rounded-circle mt-1 o_portal_contact_img" src="/web/static/src/img/user_menu_avatar.png" alt="Contact"/>-->
+<!--                                    </div>-->
+<!--                                    <div class="col pl-md-0">-->
+<!--                                        <div t-field="tailor_request_id.partner_id" t-options='{"widget": "contact", "fields": ["name", "email", "phone"]}'/>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="col-12 col-md-6 pb-2">-->
+<!--                                <strong>Responsible:</strong>-->
+<!--                                <div class="row">-->
+<!--                                    <div class="col flex-grow-0 pr-3">-->
+<!--                                        <img t-if="tailor_request_id.sudo().user_id.image_1024" class="rounded-circle mt-1 o_portal_contact_img" t-att-src="image_data_uri(tailor_request_id.sudo().user_id.image_1024)" alt="Contact"/>-->
+<!--                                        <img t-else="" class="rounded-circle mt-1 o_portal_contact_img" src="/web/static/src/img/user_menu_avatar.png" alt="Contact"/>-->
+<!--                                    </div>-->
+<!--                                    <div class="col pl-md-0">-->
+<!--                                        <div t-field="tailor_request_id.user_id" t-options='{"widget": "contact", "fields": ["name", "email", "phone"]}'/>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                        <div class="row">
+                            <div class="col-12 panel panel-default">
+                                <div class="panel-heading"><center><h4>Measurement Details</h4></center></div>
+                                <div class="panel-body">
+                                    <t t-if="measurement_type_id.measurement_ids" t-call="portal.portal_table">
+                                        <thead>
+                                          <tr class="active">
+                                            <th>Measurement Type</th>
+                                            <th>Measurement</th>
+                                            <th>Unit of Measure</th>
+                                          </tr>
+                                        </thead>
+                                        <t t-foreach="measurement_type_id.measurement_ids" t-as="line">
+                                            <tr>
+                                                <td>
+                                                    <span t-field="line.cloth_measurement_type_id"/>
+                                                </td>
+                                                 <td>
+                                                    <span t-field="line.measurement"/>
+                                                </td>
+                                                <td>
+                                                    <span t-field="line.sudo().uom_id.name"/>
+                                                </td>
+                                            </tr>
+                                        </t>
+                                    </t>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="display_tailor_measurments" name="Display Tailor Measurements">
+            <t t-call="portal.portal_layout">
+                <t t-call="portal.portal_searchbar">
+                    <t t-set="title">Measurements</t>
+                </t>
+                <t t-if="not tailor_measurements">
+                    <p>There are currently no measurements for your account.</p>
+                </t>
+                <t t-if="tailor_measurements" t-call="portal.portal_table">
+                    <thead>
+                      <tr class="active">
+                        <th>Customer</th>
+                        <th>Cloth Type</th>
+                        <th>Responsible</th>
+                        <th>Date</th>
+                        <th>Company</th>
+                      </tr>
+                    </thead>
+                    <t t-foreach="tailor_measurements" t-as="measurement">
+                        <tr>
+                            <td>
+                                <a t-attf-href="/my/tailor/measurement/#{measurement.id}?{{ keep_query() }}"><span t-field="measurement.partner_id.name"/></a>
+                            </td>
+                            <td>
+                                <span t-field="measurement.cloth_type_id.name"/>
+                            </td>
+                            <td>
+                                <span t-field="measurement.user_id.name"/>
+                            </td>
+                             <td>
+                                <span t-field="measurement.measurement_date"/>
+                            </td>
+                            <td>
+                                <span t-field="measurement.company_id.name"/>
+                            </td>
+                        </tr>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <template id="portal_custom_tailor_measurement_details" name="Tailor Measurement Details">
+        <t t-call="portal.portal_layout">
+            <t t-call="portal.portal_record_layout">
+                <t t-set="card_header">
+                    <div class="row no-gutters">
+                        <div class="col-md">
+                            <h5 class="mb-1 mb-md-0">
+                                <span t-field="tailor_measurement_id.cloth_type_id.name"/>
+                                <small class="text-muted"> (#<span t-field="tailor_measurement_id.id"/>)</small>
+                            </h5>
+                        </div>
+                    </div>
+                    <t t-set="card_body">
+                        <div class="row mb-4" t-if="tailor_measurement_id.partner_id">
+                            <div class="col-12 col-md-6 pb-2">
+                                <strong>Customer:</strong>
+                                <div class="row">
+                                    <div class="col flex-grow-0 pr-3">
+                                        <img t-if="tailor_measurement_id.partner_id.image_1024" class="rounded-circle mt-1 o_portal_contact_img" t-att-src="image_data_uri(tailor_measurement_id.partner_id.image_1024)" alt="Contact"/>
+                                        <img t-else="" class="rounded-circle mt-1 o_portal_contact_img" src="/web/static/src/img/user_menu_avatar.png" alt="Contact"/>
+                                    </div>
+                                    <div class="col pl-md-0">
+                                        <div t-field="tailor_measurement_id.partner_id" t-options='{"widget": "contact", "fields": ["name", "email", "phone"]}'/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 pb-2">
+                                <strong>Responsible:</strong>
+                                <div class="row">
+                                    <div class="col flex-grow-0 pr-3">
+                                        <img t-if="tailor_measurement_id.sudo().user_id.image_1024" class="rounded-circle mt-1 o_portal_contact_img" t-att-src="image_data_uri(tailor_measurement_id.sudo().user_id.image_1024)" alt="Contact"/>
+                                        <img t-else="" class="rounded-circle mt-1 o_portal_contact_img" src="/web/static/src/img/user_menu_avatar.png" alt="Contact"/>
+                                    </div>
+                                    <div class="col pl-md-0">
+                                        <div t-field="tailor_measurement_id.user_id" t-options='{"widget": "contact", "fields": ["name", "email", "phone"]}'/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-12 col-md-6" t-if="tailor_measurement_id.measurement_date">
+                                <strong>Date:</strong> <span t-field="tailor_measurement_id.measurement_date" t-options='{"widget": "date"}'/>
+                            </div>
+                            <div class="col-12 col-md-6" t-if="tailor_measurement_id.company_id">
+                                <strong>Company:</strong> <span t-field="tailor_measurement_id.company_id"/>
+                            </div>
+                            <div class="col-12 col-md-6" t-if="tailor_measurement_id.cloth_type_id">
+                                <strong>Cloth Type:</strong> <span t-field="tailor_measurement_id.cloth_type_id"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 panel panel-default">
+                                <div class="panel-heading"><center><h4>Measurement Details</h4></center></div>
+                                <div class="panel-body">
+                                    <t t-if="tailor_measurement_id.measurement_ids" t-call="portal.portal_table">
+                                        <thead>
+                                          <tr class="active">
+                                            <th>Measurment Type</th>
+                                            <th>Unit of  Measure</th>
+                                            <th>Measurment</th>
+                                          </tr>
+                                        </thead>
+                                        <t t-foreach="tailor_measurement_id.measurement_ids" t-as="line">
+                                            <tr>
+                                                <td>
+                                                    <span t-field="line.cloth_measurement_type_id.name"/>
+                                                </td>
+                                                <td>
+                                                    <span t-field="line.sudo().uom_id.name"/>
+                                                </td>
+                                                 <td>
+                                                    <span t-field="line.measurement"/>
+                                                </td>
+                                            </tr>
+                                        </t>
+                                    </t>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+            <div class="mt32">
+                <h4><strong>Message and communication history</strong></h4>
+                <t t-call="portal.message_thread">
+                    <t t-set="object" t-value="tailor_measurement_id"/>
+                    <t t-set="token" t-value="tailor_measurement_id.access_token"/>
+                    <t t-set="pid" t-value="pid"/>
+                    <t t-set="hash" t-value="hash"/>
+                </t>
+            </div>
+        </t>
+    </template>
+    </data>
+</odoo>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="custom_view_order_form_cloth_request" model="ir.ui.view">
+            <field name="name">sale.order.form.inherit.cloth_request</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='payment_term_id']" position="after">
+                    <field name="partner_id" invisible="1"/>
+                    <field name="custom_cloth_request_ids" domain="[('partner_id', '=', partner_id)]"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="custom_sale_action_quotations_new" model="ir.actions.act_window">
+            <field name="name">Quotation</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_mode">form,tree,graph</field>
+        </record>
+
+    </data>
+</odoo>

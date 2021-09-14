@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_cloth_request_measurement" model="ir.actions.act_window">
+        <field name="name">Cloth Request Measurement</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">cloth.request.measurement.cloth.type</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+            </p>
+        </field>
+    </record>
+
+    <record id="cloth_request_measurement_form_view" model="ir.ui.view">
+        <field name="name">cloth.request.measurement.form</field>
+        <field name="model">cloth.request.measurement.cloth.type</field>
+        <field name="arch" type="xml">
+            <form string="Cloth Request Measurement">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="partner_id" invisible="1"/>
+                            <field name="quantity"/>
+                            <field name="uom_id"/>
+                            <field name="fabric_remarks"/>
+                            <field name="fabric_color"/>
+                        </group>
+                        <group>
+                            <field name="gender"/>
+                            <field name="company_id"/>
+                            <label for="cloth_type_id"/>
+                            <div>
+                                <field name="cloth_type_id"/><br/>
+                                <button name="action_get_measurement_line" type="object" string="Get Measurments" class="oe_highlight btn-xs"/>
+                            </div>
+                        </group>
+                    </group>
+                    <div class="text-right">
+                        <button name="action_update_all_measurement" type="object" string="Update all measurement" class="btn-secondary"/>
+                    </div>
+                    <notebook>
+                        <page name="cloth_style" string="Cloth Style">
+                            <field name="style_ids">
+                                <tree editable="bottom" string="Style">
+                                    <field name="style_type_id" domain="[('cloth_type_id', '=', parent.cloth_type_id)]"/>
+                                    <field name="style_id"/>
+                                    <field name="measurement_icon" widget='image' class="oe_avatar" options='{"preview_image": "image_128"}'/>
+                                    <field name="note"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                    <notebook>
+                        <page name="cloth_measurment" string="Measurments">
+                            <field name="measurement_ids">
+                                <form>
+                                    <group>
+                                        <group>
+                                            <field name="cloth_measurement_type_id"/>
+                                            <field name="uom_id"/>
+                                        </group>
+                                        <group>
+                                            <field name="measurement"/>
+                                        </group>
+                                    </group>
+                                </form>
+                                <tree string="Measurments" editable="bottom">
+                                    <field name="cloth_measurement_type_id"/>
+                                    <field name="measurement"/>
+                                    <field name="uom_id"/>
+                                    <field name="measurement_icon" widget='image' class="oe_avatar" options='{"preview_image": "image_128"}'/>
+                                    <button string="Update" name="action_update_line_measurement" type="object" class="oe_highlight"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="cloth_request_details_form_view" model="ir.ui.view">
+        <field name="name">cloth.request.details.form</field>
+        <field name="model">cloth.request.details</field>
+        <field name="arch" type="xml">
+            <form string="Cloth Request Details" class="o_sale_order">
+                <header>
+<!--                    <button string="Create Quotation" name="action_sale_quotations_new" type="object"/>-->
+                    <button string="Create Invoice" name="action_create_sale_invoice" type="object"/>
+                    <button string="Create Purchase Request" name="action_purchase_request_new" type="object"/>
+                    <button string="Create Consumption Request" name="action_create_consumption_request" type="object"/>
+                    <button string="Create Task" name="%(cloth_tailor_management_odoo.action_view_cloth_request_task_wizard)d" type="action"/>
+                    <field name="stage_id" widget="statusbar" options="{'clickable': '1', 'fold_field': 'fold'}"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_purchase_order" type="object" class="oe_stat_button" icon="fa-pencil-square-o">
+                            <div class="o_form_field o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="purchase_orders_count"/>
+                                </span>
+                                <span class="o_stat_text">Purchases</span>
+                            </div>
+                        </button>
+                        <button name="action_view_consumption_req" type="object" class="oe_stat_button" icon="fa-pencil-square-o">
+                            <div class="o_form_field o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="consumption_request_count"/>
+                                </span>
+                                <span class="o_stat_text">Consumptions</span>
+                            </div>
+                        </button>
+                        <button type="object" class="oe_stat_button" icon="fa-pencil-square-o" name="action_view_invoice" context="{'default_partner_id': active_id}">
+                            <div class="o_form_field o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="invoices_due_amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                </span>
+                                <span class="o_stat_text">Amount Due</span>
+                            </div>
+                        </button>
+                        <button name="action_view_measurement" type="object" class="oe_stat_button" icon="fa-calendar">
+                            <div class="o_form_field o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="measurement_count"/>
+                                </span>
+                                <span class="o_stat_text">Measurement</span>
+                            </div>
+                        </button>
+                        <button name="action_view_tasks" type="object" class="oe_stat_button" icon="fa-tasks">
+                            <div class="o_form_field o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="tasks_count"/>
+                                </span>
+                                <span class="o_stat_text">Tasks</span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="partner_id" widget="res_partner_many2one" context="{'res_partner_search_mode': 'customer', 'show_address': 1, 'show_vat': True}" options="{&quot;always_reload&quot;: True}"/>
+                            <field name="lead_id" attrs="{'invisible': [('lead_id', '=', False)]}"/>
+                        </group>
+                        <group>
+                            <field name="request_date"/>
+                            <field name="deadline_date"/>
+                            <field name="company_id"/>
+                            <field name="user_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="internal_note" string="Internal Note">
+                            <field name="internal_note" placeholder="Add an internal note..." nolabel="1" height="50"/>
+                        </page>
+                        <page name="special_note" string="Special Note">
+                            <field name="special_note" placeholder="Add an special note..." nolabel="1" height="50"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="quick_create_cloth_request_form" model="ir.ui.view">
+        <field name="name">cloth.request.details.form.quick_create</field>
+        <field name="model">cloth.request.details</field>
+        <field name="priority">1000</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name" invisible="1"/>
+                    <field name="partner_id" widget="res_partner_many2one" context="{'res_partner_search_mode': 'customer', 'show_vat': True}"/>
+                    <field name="request_date"/>
+                    <field name="company_id"/>
+                    <field name="user_id"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="cloth_request_details_tree_view" model="ir.ui.view">
+        <field name="name">cloth.request.details.tree</field>
+        <field name="model">cloth.request.details</field>
+        <field name="arch" type="xml">
+            <tree string="Cloth Request Details">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="request_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="cloth_request_details_kanban_view" model="ir.ui.view">
+        <field name="name">cloth.request.details.kanban</field>
+        <field name="model">cloth.request.details</field>
+        <field name="priority" eval="1"/>
+        <field name="arch" type="xml">
+            <kanban default_group_by="stage_id" class="o_kanban_small_column" on_create="quick_create" quick_create_view="cloth_tailor_management_odoo.quick_create_cloth_request_form" archivable="false">
+                <field name="stage_id"/>
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="request_date"/>
+                <field name="deadline_date"/>
+                <field name="activity_state"/>
+                <progressbar field="activity_state" colors='{"planned": "success", "today": "warning", "overdue": "danger"}'/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="o_dropdown_kanban dropdown">
+                                <a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown" data-display="static" href="#" aria-label="Dropdown menu" title="Dropdown menu">
+                                    <span class="fa fa-ellipsis-v"/>
+                                </a>
+                                <div class="dropdown-menu" role="menu">
+                                    <t t-if="widget.editable">
+                                        <a role="menuitem" type="edit" class="dropdown-item">Edit</a>
+                                    </t>
+                                    <t t-if="widget.deletable">
+                                        <a role="menuitem" type="delete" class="dropdown-item">Delete</a>
+                                    </t>
+                                </div>
+                            </div>
+                            <div class="oe_kanban_content">
+                                <div class="row mb4">
+                                    <div class="col-6 o_kanban_record_headings">
+                                        <strong><span><field name="name"/></span></strong>
+                                    </div>
+                                    <div class="col-6 text-right">
+                                        <strong><i class="fa fa-clock-o" aria-label="Request Date" role="img" title="Request Date"/> <t t-esc="record.request_date.value"/></strong>
+                                    </div>
+                                </div>
+                                <div class="row mb4">
+                                    <div class="col-12 text-right">
+                                        <strong>Deadline: <i class="fa fa-clock-o" aria-label="Request Date" role="img" title="Deadline"/> <t t-esc="record.deadline_date.value"/></strong>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-12">
+                                        <hr/>
+                                        <div class="text-muted o_kanban_record_subtitle">
+                                            <span t-if="record.partner_id.value">,</span>
+                                            <span t-if="record.partner_id.value"> <t t-esc="record.partner_id.value"/></span>
+                                            <div class="o_kanban_record_bottom">
+                                                <div class="oe_kanban_bottom_right">
+                                                    <img t-att-src="kanban_image('res.partner', 'image_128', record.partner_id.raw_value)" t-att-title="record.partner_id.value" t-att-alt="record.partner_id.value" class="oe_kanban_avatar"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="oe_clear"/>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="view_cloth_request_details_calendar" model="ir.ui.view">
+        <field name="name">cloth.request.details.calendar</field>
+        <field name="model">cloth.request.details</field>
+        <field name="arch" type="xml">
+            <calendar string="Cloth Request Details" date_start="request_date" color="stage_id" hide_time="true" event_limit="5">
+                <field name="name"/>
+                <field name="partner_id" avatar_field="image_128"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_cloth_request_details_graph">
+        <field name="name">cloth.request.details.graph</field>
+        <field name="model">cloth.request.details</field>
+        <field name="arch" type="xml">
+            <graph string="Cloth Request Details">
+                <field name="partner_id"/>
+                <field name="request_date" type="measure"/>
+            </graph>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_cloth_request_details_pivot">
+        <field name="name">cloth.request.details.pivot</field>
+        <field name="model">cloth.request.details</field>
+        <field name="arch" type="xml">
+            <pivot string="Cloth Request Details">
+                <field name="request_date" type="row"/>
+            </pivot>
+        </field>
+    </record>
+
+
+    <record id="action_cloth_request_details" model="ir.actions.act_window">
+        <field name="name">Cloth Request</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">cloth.request.details</field>
+        <field name="view_mode">kanban,tree,form,calendar,graph,pivot</field>
+        <field name="domain">[]</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+            </p>
+        </field>
+    </record>
+
+    <record id="custom_res_partner_action_customer" model="ir.actions.act_window">
+        <field name="name">Customers</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="context">{'search_default_customer': 1,'res_partner_search_mode': 'customer', 'default_is_company': True, 'default_customer_rank': 1}</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a new customer in your address book
+          </p><p>
+            Odoo helps you easily track all activities related to a customer.
+          </p>
+        </field>
+    </record>
+</odoo>

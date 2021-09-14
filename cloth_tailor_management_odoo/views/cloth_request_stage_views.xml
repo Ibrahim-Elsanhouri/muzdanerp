@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="cloth_request_stage_search" model="ir.ui.view">
+        <field name="name">Cloth Request Stage - Search</field>
+        <field name="model">cloth.request.stage</field>
+        <field name="arch" type="xml">
+            <search string="Cloth Request Stage Search">
+                <field name="name"/>
+                <field name="sequence"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="cloth_request_stage_tree" model="ir.ui.view">
+        <field name="name">cloth.request.stage.tree</field>
+        <field name="model">cloth.request.stage</field>
+        <field name="arch" type="xml">
+            <tree string="Cloth Request Stages">
+                <field name="sequence"/>
+                <field name="name"/>
+                <field name="fold"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="cloth_request_stage_form" model="ir.ui.view">
+        <field name="name">cloth.request.stage.form</field>
+        <field name="model">cloth.request.stage</field>
+        <field name="priority" eval="1"/>
+        <field name="arch" type="xml">
+            <form string="Cloth Request Stage">
+                <sheet>
+                    <div class="oe_title">
+                        <div class="oe_edit_only">
+                            <label for="name"/>
+                        </div>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="sequence"/>
+                            <field name="create_task"/>
+                            <field name="project_id" attrs="{'invisible': [('create_task', '=', False)], 'required': [('create_task', '=', True)]}"/>
+                        </group>
+                        <group>
+                            <field name="fold" string="Folded"/>
+                            <field name="active" invisible="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="cloth_request_stage_action" model="ir.actions.act_window">
+        <field name="name">Cloth Request Stages</field>
+        <field name="res_model">cloth.request.stage</field>
+        <field name="view_id" ref="cloth_tailor_management_odoo.cloth_request_stage_tree"/>
+        <field name="help" type="html">
+            <p></p>
+        </field>
+    </record>
+</odoo>

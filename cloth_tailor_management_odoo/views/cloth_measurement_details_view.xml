@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <odoo>
+        <record id="cloth_measurement_details_form_view" model="ir.ui.view">
+            <field name="name">cloth.measurement.details.form</field>
+            <field name="model">cloth.measurement.details</field>
+            <field name="arch" type="xml">
+                <form string="Cloth Measurement Details">
+                    <header>
+                        <button name="action_create_request_line" string="Create Measurment Lines" type="object" class="oe_highlight"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="partner_id" widget="res_partner_many2one" context="{'res_partner_search_mode': 'customer', 'show_address': 1, 'show_vat': True}" options="{&quot;always_reload&quot;: True}"/>
+                                <field name="measurement_ref"/>
+                                <field name="company_id"/>
+                            </group>
+                            <group>
+                                <field name="measurement_date"/>
+                                <field name="cloth_type_id"/>
+                                <field name="user_id"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="cloth_style" string="Cloth Style">
+                                <field name="style_ids">
+                                    <tree editable="bottom" string="Style">
+                                        <field name="style_type_id" domain="[('cloth_type_id', '=', parent.cloth_type_id)]"/>
+                                        <field name="style_id" domain="[('style_type_id', '=', style_type_id)]"/>
+                                        <field name="measurement_icon" widget='image' class="oe_avatar" options='{"preview_image": "image_128"}'/>
+                                        <field name="note"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                        <notebook>
+                            <page name="cloth_measurment" string="Measurements">
+                                <field name="measurement_ids" create="false">
+                                    <tree editable="bottom" create="false" string="Cloth Measurement">
+                                        <field name="cloth_measurement_type_id"/>
+                                        <field name="measurement"/>
+                                        <field name="uom_id"/>
+                                        <field name="measurement_icon" widget='image' class="oe_avatar" options='{"preview_image": "image_128"}'/>
+                                    </tree>
+                                    <form>
+                                        <sheet>
+                                            <group>
+                                                <group>
+                                                    <field name="cloth_measurement_type_id"/>
+                                                    <field  name="uom_id"/>
+                                                </group>
+                                                <group>
+                                                    <field name="measurement"/>
+                                                    <field name="measurement_icon" widget='image' class="oe_avatar" options='{"preview_image": "image_128"}'/>
+                                                </group>
+                                            </group>
+                                        </sheet>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                        <field name="internal_note"/>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="cloth_measurement_details_tree_view" model="ir.ui.view">
+            <field name="name">cloth.measurement.details.tree</field>
+            <field name="model">cloth.measurement.details</field>
+            <field name="arch" type="xml">
+                <tree string="Cloth Measurement Details">
+                    <field name="partner_id"/>
+                    <field name="cloth_type_id"/>
+                    <field name="user_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_cloth_measurement_details" model="ir.actions.act_window">
+            <field name="name">Cloth Measurement Details</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">cloth.measurement.details</field>
+            <field name="view_mode">tree,form</field>
+            <!-- <field name="search_view_id" ref="sale_order_view_search_inherit_sale"/> -->
+            <!-- <field name="context">{}</field> -->
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                </p>
+            </field>
+        </record>
+
+        
+    </odoo>

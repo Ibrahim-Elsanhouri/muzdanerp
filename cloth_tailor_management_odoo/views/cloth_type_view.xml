@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="cloth_type_form_view" model="ir.ui.view">
+            <field name="name">cloth.type.form</field>
+            <field name="model">cloth.type</field>
+            <field name="arch" type="xml">
+                <form string="Cloth Type" class="o_sale_order">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="gender"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="cloth_measurment" string="Measurments">
+                                <field name="measurement_ids">
+                                    <tree editable="bottom" string="Cloat Measurment">
+                                        <field name="name"/>
+                                        <field name="uom_id"/>
+                                        <field name="uom_id"/>
+                                        <field name="measurement_icon" widget='image' class="oe_avatar" options='{"preview_image": "image_128"}'/>
+                                        <field name="sequence_no"/>
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <group>
+                                                <field name="name"/>
+                                                <field  name="uom_id"/>
+                                            </group>
+                                            <group>
+                                                <field name="sequence_no"/>
+                                                <field name="measurement_icon" widget='image' class="oe_avatar" options='{"preview_image": "image_128"}'/>
+                                            </group>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="cloth_type_tree_view" model="ir.ui.view">
+            <field name="name">cloth.type.tree</field>
+            <field name="model">cloth.type</field>
+            <field name="arch" type="xml">
+                <tree string="Cloth Type">
+                    <field name="name"/>
+                    <field name="gender"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_cloth_type" model="ir.actions.act_window">
+            <field name="name">Cloth Types</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">cloth.type</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                </p>
+            </field>
+        </record>
+</odoo>
